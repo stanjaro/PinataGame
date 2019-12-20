@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/businessman.obj-5aa8516fe43b6b26c327a1c9f2aeb54d.mesh"
+
+[deps]
+
+files=[ "res://.import/businessman.obj-5aa8516fe43b6b26c327a1c9f2aeb54d.mesh" ]
+
+source_file="res://3dobjs/businessman.obj"
+dest_files=[ "res://.import/businessman.obj-5aa8516fe43b6b26c327a1c9f2aeb54d.mesh", "res://.import/businessman.obj-5aa8516fe43b6b26c327a1c9f2aeb54d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

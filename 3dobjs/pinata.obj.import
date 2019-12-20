@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pinata.obj-604328bdaf25c3c96a4c5ad7cce6125d.mesh"
+
+[deps]
+
+files=[ "res://.import/pinata.obj-604328bdaf25c3c96a4c5ad7cce6125d.mesh" ]
+
+source_file="res://3dobjs/pinata.obj"
+dest_files=[ "res://.import/pinata.obj-604328bdaf25c3c96a4c5ad7cce6125d.mesh", "res://.import/pinata.obj-604328bdaf25c3c96a4c5ad7cce6125d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
