@@ -6,6 +6,7 @@ var max_speed = 8
 var mouse_sensitivity = 0.002
 
 var current_collide = "none"
+signal collidePinata()
 
 var velocity = Vector3()
 
@@ -29,6 +30,7 @@ func set_current_collide(name):
 		current_collide = "worker"
 	elif name.begins_with("Pinata"):
 		current_collide = "pinata"
+		emit_signal("collidePinata")
 	elif name.begins_with("Wall"):
 		current_collide = "wall"
 	else:
