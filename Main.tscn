@@ -49,10 +49,6 @@ transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor"]
-transform = Transform( 20, 0, 0, 0, -8.74228e-007, -1, 0, 20, -4.37114e-008, 0, -1, 0 )
-shape = SubResource( 2 )
-
 [node name="Ceiling" type="StaticBody" parent="."]
 editor/display_folded = true
 
@@ -60,10 +56,6 @@ editor/display_folded = true
 transform = Transform( 20, 0, 0, 0, -20, 1.74846e-006, 0, -1.74846e-006, -20, 0, 40, 0 )
 mesh = SubResource( 1 )
 material/0 = null
-
-[node name="CollisionShape" type="CollisionShape" parent="Ceiling"]
-transform = Transform( 20, 0, 0, 0, -8.74228e-007, 1, 0, -20, -4.37114e-008, 0, 40, 0 )
-shape = SubResource( 2 )
 
 [node name="BackWall" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -105,8 +97,7 @@ transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 20, 20 )
 shape = SubResource( 2 )
 
 [node name="RightWall" type="StaticBody" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RightWall"]
 transform = Transform( -8.74228e-007, -20, 3.49691e-006, 20, -8.74228e-007, 0, 1.52855e-013, 3.49691e-006, 20, 20, 20, 0 )
@@ -134,111 +125,114 @@ material/4 = null
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 6, 0.313556 )
 shape = SubResource( 3 )
 
-[node name="Worker1" type="StaticBody" parent="."]
+[node name="Worker" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Worker1" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04, 0, 2.94 )
 
-[node name="businessman" type="MeshInstance" parent="Worker1"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker1"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker1"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker2" type="StaticBody" parent="."]
+[node name="Worker2" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54, 0, 4.75 )
 
-[node name="businessman" type="MeshInstance" parent="Worker2"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker2"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker2"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker3" type="StaticBody" parent="."]
+[node name="Worker3" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54, 0, 4.75 )
 
-[node name="businessman" type="MeshInstance" parent="Worker3"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker3"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker3"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker3"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker4" type="StaticBody" parent="."]
+[node name="Worker4" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04, 0, 2.94 )
 
-[node name="businessman" type="MeshInstance" parent="Worker4"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker4"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker4"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker4"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker5" type="StaticBody" parent="."]
+[node name="Worker5" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
 
-[node name="businessman" type="MeshInstance" parent="Worker5"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker5"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker5"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker5"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker6" type="StaticBody" parent="."]
+[node name="Worker6" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04, 0, -2.94 )
 
-[node name="businessman" type="MeshInstance" parent="Worker6"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker6"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker6"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker6"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker7" type="StaticBody" parent="."]
+[node name="Worker7" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54, 0, -4.75 )
 
-[node name="businessman" type="MeshInstance" parent="Worker7"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker7"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker7"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker7"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker8" type="StaticBody" parent="."]
+[node name="Worker8" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54, 0, -4.75 )
 
-[node name="businessman" type="MeshInstance" parent="Worker8"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker8"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker8"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker8"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
-[node name="Worker9" type="StaticBody" parent="."]
+[node name="Worker9" type="StaticBody" parent="Worker"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04, 0, -2.94 )
 
-[node name="businessman" type="MeshInstance" parent="Worker9"]
+[node name="businessman" type="MeshInstance" parent="Worker/Worker9"]
 mesh = ExtResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Worker9"]
+[node name="CollisionShape" type="CollisionShape" parent="Worker/Worker9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
 
