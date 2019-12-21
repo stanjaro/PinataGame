@@ -5,6 +5,8 @@ export (NodePath) var camera
 var max_speed = 8
 var mouse_sensitivity = 0.002
 
+var current_collide
+
 var velocity = Vector3()
 
 func get_input():
@@ -21,9 +23,12 @@ func get_input():
 	return input_dir
 
 
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
+
+
 
 
 func _physics_process(delta):
@@ -31,3 +36,8 @@ func _physics_process(delta):
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+	var collision_info = get_slide_collision(0)
+	if collision_info:
+		print(collision_info.collider.get_parent().name)
+
+

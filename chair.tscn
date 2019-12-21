@@ -17,4 +17,3 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 32, 0, 0, 0, 54, 0, 0, 0, 30, 0, 60.667, 0.0138397 )
 shape = SubResource( 1 )
-
