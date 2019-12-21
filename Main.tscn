@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+
+[node name="Main" type="Spatial"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 1 )
+
+[node name="TimeCD" type="Label" parent="HUD"]
+anchor_bottom = 0.35
+margin_right = 40.0
+margin_bottom = -196.0
+align = 1
+valign = 1
+
+[node name="TimeOnLevel" type="Timer" parent="HUD"]
+
+[node name="StartButton" type="Button" parent="HUD"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "START"
+
+[connection signal="timeout" from="HUD/TimeOnLevel" to="HUD" method="_on_TimeOnLevel_timeout"]
+[connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_StartButton_pressed"]

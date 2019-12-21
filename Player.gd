@@ -5,7 +5,7 @@ export (NodePath) var camera
 var max_speed = 8
 var mouse_sensitivity = 0.002
 
-var current_collide
+var current_collide = "none"
 
 var velocity = Vector3()
 
@@ -22,7 +22,17 @@ func get_input():
 	input_dir = input_dir.normalized()
 	return input_dir
 
-
+func set_current_collide(name):
+	if name.begins_with("Chair"):
+		current_collide = "chair"
+	elif name.begins_with("Worker"):
+		current_collide = "worker"
+	elif name.begins_with("Pinata"):
+		current_collide = "pinata"
+	elif name.begins_with("Wall"):
+		current_collide = "wall"
+	else:
+		current_collide = "none"
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -38,6 +48,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP, true)
 	var collision_info = get_slide_collision(0)
 	if collision_info:
-		print(collision_info.collider.get_parent().name)
+		set_current_collide(collision_info.collider.name)
+		print(current_collide)
+	else:
+		set_current_collide("none")
 
 
