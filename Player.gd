@@ -17,6 +17,7 @@ signal hitPinata()
 signal hitWorker()
 signal hitChair()
 signal hitWall()
+signal collide()
 
 var velocity = Vector3()
 

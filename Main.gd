@@ -5,7 +5,7 @@ func _ready():
 	$Player.connect("hitWorker",self, "playGrunt")
 	$Player.connect("hitChair",self, "playChair")
 	$Player.connect("hitWall",self, "playBump")
-	
+	$Player.connect("collide", self, "playBump")
 	
 	
 func onPinataHit():
