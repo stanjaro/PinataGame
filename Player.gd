@@ -2,7 +2,7 @@ extends KinematicBody
 
 export (NodePath) var camera
 
-var SFX_COOLDOWN = 3
+var SFX_COOLDOWN = 4
 
 var max_speed = 8
 var mouse_sensitivity = 0.002

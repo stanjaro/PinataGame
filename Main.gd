@@ -12,14 +12,15 @@ func onPinataHit():
 	playYay()
 	Global.goto_scene("res://Level2.tscn")
 
+
 func playYay():
-	$sfx.play("yay")
+	sfx.play("yay")
 
 func playGrunt():
-	$sfx.play("grunt")
+	sfx.play("grunt")
 
 func playChair():
-	$sfx.play("chair_spin")
+	sfx.play("chair_spin")
 	
 func playBump():
-	$sfx.play("bump")
+	sfx.play("bump")

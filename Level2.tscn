@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Level2.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://3dobjs/table.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://3dobjs/chair_f.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://3dobjs/businessman.obj" type="ArrayMesh" id=6]
-[ext_resource path="res://sfx.tscn" type="PackedScene" id=7]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -247,6 +246,4 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker6"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 6 )
-
-[node name="sfx" parent="." instance=ExtResource( 7 )]
 
