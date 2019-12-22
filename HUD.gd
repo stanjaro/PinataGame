@@ -3,6 +3,11 @@ extends CanvasLayer
 signal start_game
 var timeLeft = 120
 
+func _ready():
+	$TutInstruc.hide()
+	$BackToMenu.hide()
+	
+
 func show_message(text):
 	$TimeCD.text = text
 	$TimeCD.show()
@@ -24,3 +29,20 @@ func _on_StartButton_pressed():
 func _on_TimeOnLevel_timeout():
 	timeLeft-=1
 	show_message(String(timeLeft) + " s")
+
+func timePenalty():
+	timeLeft-=2
+	show_message(String(timeLeft) + " s")
+
+func _on_Tutorial_pressed():
+	$TutInstruc.show()
+	$Tutorial.hide()
+	$BackToMenu.show()
+	$StartButton.hide()
+
+
+func _on_BackToMenu_pressed():
+	$TutInstruc.hide()
+	$Tutorial.show()
+	$StartButton.show()
+	$BackToMenu.hide()
