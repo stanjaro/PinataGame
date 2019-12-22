@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 signal start_game
-var timeLeft = 125
+var timeLeft = 123
 
 func _ready():
 	$TutInstruc.hide()

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Alien-Encounters-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+font_data = SubResource( 1 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -30,16 +37,22 @@ margin_right = 555.0
 margin_bottom = 404.0
 text = "Tutorial"
 
-[node name="TutInstruc" type="RichTextLabel" parent="."]
-margin_left = 378.0
-margin_top = 107.0
-margin_right = 661.0
-margin_bottom = 276.0
+[node name="TutInstruc" type="Label" parent="."]
+margin_left = 215.768
+margin_top = 21.1442
+margin_right = 830.768
+margin_bottom = 278.144
+custom_fonts/font = SubResource( 2 )
 text = "WASD - Move
 Mouse - Look around
 SpaceBar - Swing Bat
 
-You're at your office party trying to smash a pinata can you make your way through 2 levels and smash the pinata in 2 minutes?
+
+You're at your office party trying to smash a pinata can you make your way
+ through 2 levels and smash the pinata in 2 minutes?
+
+You'll get a top down view of the office before you are blindfolded. 
+Can you navigate your way around the room successfully?
 
 
 Don't hit your co-workers or you'll lose time off the clock"
