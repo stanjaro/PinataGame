@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ToYourLeft.wav-657306c815d127d71d16d4dd830f2e98.sample"
+
+[deps]
+
+source_file="res://Sounds/ToYourLeft.wav"
+dest_files=[ "res://.import/ToYourLeft.wav-657306c815d127d71d16d4dd830f2e98.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

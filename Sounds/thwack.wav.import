@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/thwack.wav-6b0b6bb4849678df37abe6f5119dbe5b.sample"
+
+[deps]
+
+source_file="res://Sounds/thwack.wav"
+dest_files=[ "res://.import/thwack.wav-6b0b6bb4849678df37abe6f5119dbe5b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
