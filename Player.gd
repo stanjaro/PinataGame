@@ -9,10 +9,14 @@ var mouse_sensitivity = 0.002
 var hit_cooldown = SFX_COOLDOWN
 var collide_cooldown = SFX_COOLDOWN/3
 var spin_time = 1
+var top_down_time = 3
 var hit_pressed = false
 var collide_should_sound = true
 var sfx_on = false
 var spinning = false
+var top_down = true
+onready var cam1 = get_node("Camera")
+onready var cam2 = get_node("Camera2")
 
 var current_collide = "none"
 signal hitPinata()
@@ -23,19 +27,23 @@ signal collide()
 
 var velocity = Vector3()
 
+func _ready():
+	$Camera2.current = true
+
 func get_input():
 	var input_dir = Vector3()
-	if Input.is_action_pressed("ui_up"):
-		input_dir += -get_global_transform().basis.z
-	if Input.is_action_pressed("ui_down"):
-		input_dir += get_global_transform().basis.z
-	if Input.is_action_pressed("ui_left"):
-		input_dir += -get_global_transform().basis.x
-	if Input.is_action_pressed("ui_right"):
-		input_dir += get_global_transform().basis.x
-	if Input.is_action_pressed("ui_select"):
-		check_hit()
-	input_dir = input_dir.normalized()
+	if !top_down:
+		if Input.is_action_pressed("ui_up"):
+			input_dir += -get_global_transform().basis.z
+		if Input.is_action_pressed("ui_down"):
+			input_dir += get_global_transform().basis.z
+		if Input.is_action_pressed("ui_left"):
+			input_dir += -get_global_transform().basis.x
+		if Input.is_action_pressed("ui_right"):
+			input_dir += get_global_transform().basis.x
+		if Input.is_action_pressed("ui_select"):
+			check_hit()
+		input_dir = input_dir.normalized()
 	return input_dir
 
 func set_current_collide(name):
@@ -117,4 +125,9 @@ func _physics_process(delta):
 		collide_cooldown = SFX_COOLDOWN/3
 		collide_should_sound = true
 		sfx_on = false
+	if top_down:
+		top_down_time -= delta
+	if top_down_time < 0:
+		top_down = false
+		$Camera1.current = true
 
