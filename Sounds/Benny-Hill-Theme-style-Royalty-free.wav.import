@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Benny-Hill-Theme-style-Royalty-free.wav-0634f0601ad8b722315e0c70a26d4958.sample"
+
+[deps]
+
+source_file="res://Sounds/Benny-Hill-Theme-style-Royalty-free.wav"
+dest_files=[ "res://.import/Benny-Hill-Theme-style-Royalty-free.wav-0634f0601ad8b722315e0c70a26d4958.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
