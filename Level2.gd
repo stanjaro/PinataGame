@@ -8,12 +8,15 @@ func _ready():
 	$Player.connect("collide", self, "playBump")
 	HUD.get_node("StartButton").hide()
 	HUD.get_node("Tutorial").hide()
+	HUD.get_node("Title").hide()
 	HUD.show_message("Hit the Pinata with your bat")
 	
 	
 func onPinataHit():
 	playYay()
-	Global.goto_scene("res://Level2.tscn")
+	HUD.get_node("TimeOnLevel").stop()
+	HUD.get_node("TimeCD").hide()
+	Global.goto_scene("res://youwin.tscn")
 
 func playYay():
 	sfx.play("yay")

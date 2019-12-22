@@ -1,48 +1,59 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://Alien-Encounters-Regular.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://Alien-Encounters-Regular.ttf"
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_color = Color( 0.670588, 0.333333, 0.105882, 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 24
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Alien-Encounters-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
 size = 14
-font_data = SubResource( 1 )
+font_data = SubResource( 3 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 212.629
+margin_top = 217.773
+margin_right = 778.629
+margin_bottom = 267.773
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.713726, 0.741176, 1 )
+custom_colors/font_outline_modulate = Color( 0.298039, 0.376471, 0.435294, 1 )
+custom_colors/font_color_shadow = Color( 0.698039, 0.219608, 0.219608, 1 )
+text = "PINATA POUNDING PARTY"
 
 [node name="TimeCD" type="Label" parent="."]
 anchor_bottom = 0.35
 margin_left = 491.0
 margin_top = 232.0
 margin_right = 531.0
-margin_bottom = 36.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 
 [node name="TimeOnLevel" type="Timer" parent="."]
-
-[node name="StartButton" type="Button" parent="."]
-margin_left = 456.0
-margin_top = 302.0
-margin_right = 569.0
-margin_bottom = 343.0
-text = "START"
-
-[node name="Tutorial" type="Button" parent="."]
-margin_left = 469.0
-margin_top = 369.0
-margin_right = 555.0
-margin_bottom = 404.0
-text = "Tutorial"
 
 [node name="TutInstruc" type="Label" parent="."]
 margin_left = 215.768
 margin_top = 21.1442
 margin_right = 830.768
 margin_bottom = 278.144
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "WASD - Move
 Mouse - Look around
 SpaceBar - Swing Bat
@@ -58,13 +69,28 @@ Can you navigate your way around the room successfully?
 Don't hit your co-workers or you'll lose time off the clock"
 
 [node name="BackToMenu" type="Button" parent="."]
-margin_left = 462.0
-margin_top = 369.0
-margin_right = 562.0
-margin_bottom = 405.0
+margin_left = 460.285
+margin_top = 422.157
+margin_right = 560.285
+margin_bottom = 458.157
 text = "To Start Menu"
 
+[node name="StartButton" type="Button" parent="."]
+margin_left = 456.0
+margin_top = 302.0
+margin_right = 569.0
+margin_bottom = 343.0
+text = "START"
+
+[node name="Tutorial" type="Button" parent="."]
+margin_left = 469.0
+margin_top = 369.0
+margin_right = 555.0
+margin_bottom = 404.0
+action_mode = 0
+text = "Tutorial"
+
 [connection signal="timeout" from="TimeOnLevel" to="." method="_on_TimeOnLevel_timeout"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Tutorial" to="." method="_on_Tutorial_pressed"]
-[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]

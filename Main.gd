@@ -10,6 +10,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	HUD.get_node("StartButton").hide()
 	HUD.get_node("Tutorial").hide()
+	HUD.get_node("Title").hide()
 	HUD.show_message("Hit the Pinata with your bat")
 	
 
