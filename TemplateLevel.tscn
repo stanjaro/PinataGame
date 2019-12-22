@@ -4,14 +4,14 @@
 [ext_resource path="res://3dobjs/businessman.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.18963, 6.03205, 2.78227 )
 
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.338881
 height = 1.13954
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="PlaneMesh" id=3]
 
 [node name="Spatial" type="Spatial"]
 __meta__ = {
@@ -33,7 +33,7 @@ material/4 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Pinata"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 6, 0.313556 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Worker1" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -45,7 +45,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker2" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -57,7 +57,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker3" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -69,7 +69,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker3"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker4" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -81,7 +81,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker4"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker5" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -93,7 +93,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker5"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker6" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -105,7 +105,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker6"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker7" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -117,7 +117,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker7"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker8" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -129,7 +129,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker8"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Worker9" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -141,7 +141,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03085, 5.96046e-007, -0.282772 )
@@ -149,5 +149,5 @@ camera = NodePath("../../Player/Camera")
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
-mesh = SubResource( 1 )
+mesh = SubResource( 3 )
 material/0 = null
