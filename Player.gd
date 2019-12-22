@@ -84,10 +84,9 @@ func _physics_process(delta):
 	var desired_velocity = get_input() * max_speed
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
-	velocity = move_and_slide(velocity, Vector3.UP, true)
-	var collision_info = get_slide_collision(0)
-	if collision_info:
-		set_current_collide(collision_info.collider.name)
+	var collision = move_and_collide(velocity*delta)
+	if collision:
+		set_current_collide(collision.collider.name)
 		if collide_should_sound and sfx_on == false:
 			print("collide")
 			collide_should_sound = false
