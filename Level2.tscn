@@ -12,45 +12,45 @@
 
 [sub_resource type="PlaneMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 1, 0, 0.466667, 1 )
 
 [sub_resource type="BoxShape" id=3]
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.6, 0, 0.466667, 1 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.4, 0, 0.466667, 1 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0.2, 0, 0.466667, 1 )
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.117647, 0.898039, 0.203922, 1 )
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_color = Color( 0.0862745, 0.847059, 0.862745, 1 )
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.945098, 0.0705882, 0.0705882, 1 )
 
-[sub_resource type="SpatialMaterial" id=14]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.368627, 0.121569, 0.807843, 1 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 1.18963, 6.03205, 2.78227 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=12]
 extents = Vector3( 0.745797, 0.42827, 0.347458 )
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_color = Color( 0.937255, 0.0588235, 0.0980392, 1 )
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=14]
 extents = Vector3( 1, 1.12584, 1.27833 )
 
-[sub_resource type="CapsuleShape" id=10]
+[sub_resource type="CapsuleShape" id=15]
 radius = 0.338881
 height = 1.13954
 
@@ -84,7 +84,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15 )
 [node name="MeshInstance" type="MeshInstance" parent="BackWall"]
 transform = Transform( 20, 0, 0, 0, -8.74228e-007, -20, 0, 20, -8.74228e-007, 0, 20, -20 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
+material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="BackWall"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 20, -20 )
@@ -97,7 +97,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="LeftWall"]
 transform = Transform( 8.74228e-007, 20, -1.74846e-006, 20, -8.74228e-007, 0, -7.64274e-014, -1.74846e-006, -20, -20, 20, 0 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="LeftWall"]
 transform = Transform( 3.82137e-014, 8.74228e-007, 1, 20, -8.74228e-007, 0, 8.74228e-007, 20, -4.37114e-008, -20, 20, 0 )
@@ -110,7 +110,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14 )
 [node name="MeshInstance" type="MeshInstance" parent="FrontWall"]
 transform = Transform( 20, 0, 0, 0, 2.38498e-007, 20, 0, -20, 2.38498e-007, 0, 20, 20 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+material/0 = SubResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FrontWall"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 20, 20 )
@@ -123,7 +123,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="RightWall"]
 transform = Transform( -8.74228e-007, -20, 3.49691e-006, 20, -8.74228e-007, 0, 1.52855e-013, 3.49691e-006, 20, 20, 20, 0 )
 mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+material/0 = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="RightWall"]
 transform = Transform( -8.74228e-007, 0, 1, 0, 20, 0, -20, 0, -4.37114e-008, 20, 20, 0 )
@@ -136,15 +136,15 @@ transform = Transform( 0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 3, 0.5, 0 )
 [node name="pinata" type="MeshInstance" parent="Pinata"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 11 )
-material/1 = SubResource( 12 )
+material/0 = SubResource( 7 )
+material/1 = SubResource( 8 )
 material/2 = ExtResource( 5 )
-material/3 = SubResource( 13 )
-material/4 = SubResource( 14 )
+material/3 = SubResource( 9 )
+material/4 = SubResource( 10 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Pinata"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 6, 0.313556 )
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="Table" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
@@ -190,7 +190,7 @@ material/35 = ExtResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Table"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397474, 0, -0.303327 )
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 
 [node name="Chair" type="StaticBody" parent="."]
 editor/display_folded = true
@@ -198,11 +198,11 @@ transform = Transform( -0.01, 0, -8.74228e-010, 0, 0.01, 0, 8.74228e-010, 0, -0.
 
 [node name="chair_f" type="MeshInstance" parent="Chair"]
 mesh = ExtResource( 8 )
-material/0 = SubResource( 15 )
+material/0 = SubResource( 13 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Chair"]
 transform = Transform( 32, 0, 0, 0, 54, 0, 0, 0, 30, 0, 60.667, 0.0138397 )
-shape = SubResource( 9 )
+shape = SubResource( 14 )
 
 [node name="Worker" type="Node" parent="."]
 editor/display_folded = true
@@ -217,7 +217,7 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 
 [node name="Worker2" type="StaticBody" parent="Worker"]
 editor/display_folded = true
@@ -229,7 +229,7 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 
 [node name="Worker3" type="StaticBody" parent="Worker"]
 editor/display_folded = true
@@ -241,7 +241,7 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker3"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 
 [node name="Worker4" type="StaticBody" parent="Worker"]
 editor/display_folded = true
@@ -253,7 +253,7 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker4"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 
 [node name="Worker5" type="StaticBody" parent="Worker"]
 editor/display_folded = true
@@ -265,7 +265,7 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker5"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 
 [node name="Worker6" type="StaticBody" parent="Worker"]
 editor/display_folded = true
@@ -277,5 +277,4 @@ material/0 = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker6"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 10 )
-
+shape = SubResource( 15 )
