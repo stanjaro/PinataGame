@@ -6,6 +6,7 @@ func _ready():
 	$Player.connect("hitChair",self, "playChair")
 	$Player.connect("hitWall",self, "playBump")
 	$Player.connect("collide", self, "playBump")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	
 func onPinataHit():
@@ -24,3 +25,9 @@ func playChair():
 	
 func playBump():
 	sfx.play("bump")
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+        Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event.is_action_pressed("ui_select"):
+        Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

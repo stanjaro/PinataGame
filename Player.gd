@@ -8,9 +8,11 @@ var max_speed = 8
 var mouse_sensitivity = 0.002
 var hit_cooldown = SFX_COOLDOWN
 var collide_cooldown = SFX_COOLDOWN/3
+var spin_time = 1
 var hit_pressed = false
 var collide_should_sound = true
 var sfx_on = false
+var spinning = false
 
 var current_collide = "none"
 signal hitPinata()
@@ -54,7 +56,7 @@ func check_hit():
 	if current_collide == "chair" and !hit_pressed:
 		print("SPIN")
 		hit_pressed = true
-		
+		spinning = true
 		emit_signal("hitChair")
 	elif current_collide == "worker" and !hit_pressed:
 		print("OVER THERE")
@@ -86,6 +88,12 @@ func _physics_process(delta):
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	var collision = move_and_collide(velocity*delta)
+	if spinning:
+		rotate_y(-delta * 10)
+		spin_time -= delta
+	if spin_time < 0:
+		spinning = false
+		spin_time = 1
 	if collision:
 		set_current_collide(collision.collider.name)
 		if collide_should_sound and sfx_on == false:
