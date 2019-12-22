@@ -1,8 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://3dobjs/businessman.obj" type="ArrayMesh" id=1]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="Shader" id=6]
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 6 )
+
+[sub_resource type="VisualShaderNodeColorConstant" id=1]
+constant = Color( 0.769084, 0.356216, 0.792969, 1 )
+
+[sub_resource type="VisualShaderNodeColorUniform" id=2]
+uniform_name = "ColorUniform"
+
+[sub_resource type="VisualShader" id=3]
+graph_offset = Vector2( 0, -172 )
+nodes/fragment/0/position = Vector2( 100, 40 )
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( 900, 140 )
+nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/position = Vector2( 940, -100 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[sub_resource type="CapsuleShape" id=5]
 radius = 0.338881
 height = 1.13954
 
@@ -11,9 +33,11 @@ height = 1.13954
 [node name="StaticBody" type="StaticBody" parent="."]
 
 [node name="businessman" type="MeshInstance" parent="StaticBody"]
+material_override = SubResource( 7 )
 mesh = ExtResource( 1 )
-material/0 = null
+material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00712985, 0.86187, 0.00277334 )
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
+shape = SubResource( 5 )
+
