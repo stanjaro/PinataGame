@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 signal start_game
-var timeLeft = 120
+var timeLeft = 125
 
 func _ready():
 	$TutInstruc.hide()
@@ -24,6 +24,7 @@ func _on_StartButton_pressed():
 	$StartButton.hide()
 	show_message(String(timeLeft) + " s")
 	emit_signal("start_game")
+	Global.goto_scene("res://Level1.tscn")
 
 
 func _on_TimeOnLevel_timeout():

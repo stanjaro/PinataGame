@@ -6,6 +6,9 @@ func _ready():
 	$Player.connect("hitChair",self, "playChair")
 	$Player.connect("hitWall",self, "playBump")
 	$Player.connect("collide", self, "playBump")
+	HUD.get_node("StartButton").hide()
+	HUD.get_node("Tutorial").hide()
+	HUD.show_message("Hit the Pinata with your bat")
 	
 	
 func onPinataHit():

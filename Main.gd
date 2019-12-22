@@ -3,19 +3,21 @@ extends Node
 func _ready():
 	$Player.connect("hitPinata",self,"onPinataHit")
 	$Player.connect("hitWorker",self, "playGrunt")
-	$Player.connect("hitWorker",$HUD,"timePenalty")
+	$Player.connect("hitWorker",HUD,"timePenalty")
 	$Player.connect("hitChair",self, "playChair")
 	$Player.connect("hitWall",self, "playBump")
 	$Player.connect("collide", self, "playBump")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	HUD.get_node("StartButton").hide()
+	HUD.get_node("Tutorial").hide()
+	HUD.show_message("Hit the Pinata with your bat")
 	
 
 func game_over():
-	$HUD/TimeCD.stop()
-	$HUD.show_game_over()
+	HUD.get_node("TimeCD").stop()
+	HUD.show_game_over()
 
-func new_game():
-	$HUD.show_message("Hit the Pinata with your bat")
+
 	
 func onPinataHit():
 	playYay()

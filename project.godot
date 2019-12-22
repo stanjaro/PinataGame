@@ -16,13 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="PinataGame"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://startmenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Global.gd"
 sfx="*res://sfx.tscn"
+HUD="*res://startmenu.tscn"
 
 [input]
 
