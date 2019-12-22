@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD.gd" type="Script" id=3]
 [ext_resource path="res://3dobjs/pinata.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://3dobjs/businessman.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://sfx.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -235,5 +236,8 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, -0.00712985, 0.86187, 0.00277334 )
 shape = SubResource( 4 )
+
+[node name="sfx" parent="." instance=ExtResource( 6 )]
+
 [connection signal="timeout" from="HUD/TimeOnLevel" to="HUD" method="_on_TimeOnLevel_timeout"]
 [connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_StartButton_pressed"]

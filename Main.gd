@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	$Player.connect("collidePinata",self,"onPinataHit")
+	$Player.connect("hitPinata",self,"onPinataHit")
 	
 	
 	

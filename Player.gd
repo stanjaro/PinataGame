@@ -13,7 +13,11 @@ var collide_should_sound = true
 var sfx_on = false
 
 var current_collide = "none"
-signal collidePinata()
+signal hitPinata()
+signal hitWorker()
+signal hitChair()
+signal hitWall()
+signal hitPinata()
 
 var velocity = Vector3()
 
@@ -51,7 +55,7 @@ func check_hit():
 		print("SPIN")
 		hit_pressed = true
 		sfx_on = true
-		emit_signal("hitChairr")
+		emit_signal("hitChair")
 	elif current_collide == "worker" and !hit_pressed and sfx_on == false:
 		print("OVER THERE")
 		hit_pressed = true
@@ -59,7 +63,7 @@ func check_hit():
 		emit_signal("hitWorker")
 	elif current_collide == "pinata" and !hit_pressed and sfx_on == false:
 		print("YAY")
-		emit_signal("collidePinata")
+		emit_signal("hitPinata")
 		hit_pressed = true
 		sfx_on = true
 	elif current_collide == "wall" and !hit_pressed and sfx_on == false:
