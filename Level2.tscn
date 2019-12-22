@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Level2.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://3dobjs/pinata.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://3dobjs/table.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://3dobjs/chair_f.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://3dobjs/businessman.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://3dobjs/Tile1.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://3dobjs/pinata.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://3dobjs/table.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://3dobjs/chair_f.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://3dobjs/businessman.obj" type="ArrayMesh" id=7]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -46,9 +47,11 @@ shape = SubResource( 2 )
 [node name="Floor" type="StaticBody" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
-transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
-mesh = SubResource( 1 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 3 )
 material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="Ceiling" type="StaticBody" parent="."]
 
@@ -102,7 +105,7 @@ transform = Transform( 0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 3, 0.5, 0 )
 
 [node name="pinata" type="MeshInstance" parent="Pinata"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
-mesh = ExtResource( 3 )
+mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -118,7 +121,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Table"]
-mesh = ExtResource( 4 )
+mesh = ExtResource( 5 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -165,7 +168,7 @@ editor/display_folded = true
 transform = Transform( -0.01, 0, -8.74228e-010, 0, 0.01, 0, 8.74228e-010, 0, -0.01, 0.4, 0, 1 )
 
 [node name="chair_f" type="MeshInstance" parent="Chair"]
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Chair"]
@@ -180,7 +183,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4 )
 
 [node name="businessman" type="MeshInstance" parent="Worker/Worker1"]
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker1"]
@@ -192,7 +195,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5.8 )
 
 [node name="businessman" type="MeshInstance" parent="Worker/Worker2"]
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker2"]
@@ -204,7 +207,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0 )
 
 [node name="businessman" type="MeshInstance" parent="Worker/Worker3"]
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker3"]
@@ -216,7 +219,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3 )
 
 [node name="businessman" type="MeshInstance" parent="Worker/Worker4"]
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker4"]
@@ -228,7 +231,7 @@ editor/display_folded = true
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -7.6, 0, -4 )
 
 [node name="businessman" type="MeshInstance" parent="Worker/Worker5"]
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker5"]
@@ -240,7 +243,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4.7 )
 
 [node name="businessman" type="MeshInstance" parent="Worker/Worker6"]
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Worker/Worker6"]
