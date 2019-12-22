@@ -51,25 +51,25 @@ func set_current_collide(name):
 
 func check_hit():
 	#print("you hit" + current_collide)
-	if current_collide == "chair" and !hit_pressed and sfx_on == false:
+	if current_collide == "chair" and !hit_pressed:
 		print("SPIN")
 		hit_pressed = true
-		sfx_on = true
+		
 		emit_signal("hitChair")
-	elif current_collide == "worker" and !hit_pressed and sfx_on == false:
+	elif current_collide == "worker" and !hit_pressed:
 		print("OVER THERE")
 		hit_pressed = true
-		sfx_on = true
+		
 		emit_signal("hitWorker")
-	elif current_collide == "pinata" and !hit_pressed and sfx_on == false:
+	elif current_collide == "pinata" and !hit_pressed:
 		print("YAY")
 		emit_signal("hitPinata")
 		hit_pressed = true
-		sfx_on = true
-	elif current_collide == "wall" and !hit_pressed and sfx_on == false:
+		
+	elif current_collide == "wall" and !hit_pressed:
 		print("OOF")
 		hit_pressed = true
-		sfx_on = true
+		
 		emit_signal("hitWall")
 	else:
 		return
@@ -95,13 +95,13 @@ func _physics_process(delta):
 			emit_signal("collide")
 	else:
 		set_current_collide("none")
-	if hit_cooldown > 0 and hit_pressed and sfx_on == true:
+	if hit_cooldown > 0 and hit_pressed:
 		hit_cooldown -= delta
 		#print(cooldown)
 	if hit_cooldown < 0:
 		hit_cooldown = SFX_COOLDOWN
 		hit_pressed = false
-		sfx_on = false
+		
 	if collide_cooldown > 0 and !collide_should_sound and sfx_on == true:
 		collide_cooldown -= delta
 		#print(collide_cooldown)
